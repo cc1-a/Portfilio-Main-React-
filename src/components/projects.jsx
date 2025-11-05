@@ -8,7 +8,7 @@ const projects=[
         image:"/projects/project1.png",
         tags:["React","TailwindCSS",],
         demoUrl:"#home",
-        githubUrl:"https://github.com/cc1-a/Portfilio-React",
+        githubUrl:"https://github.com/cc1-a/Portfilio-Main-React-",
     }
 ]
 
