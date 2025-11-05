@@ -6,6 +6,8 @@ const navItems=[
     {name:"Home",href:"#home"},
     {name:"About",href:"#about"},
     {name:"Projects",href:"#projects"},
+    {name:"Videos",href:"#videos"},
+    {name:"Graphic Designs",href:"#graphics"},
     {name:"Contact Me",href:"#contact"},
 ]
 

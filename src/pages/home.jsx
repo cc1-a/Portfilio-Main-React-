@@ -6,6 +6,8 @@ import { AboutMe } from "../components/AboutMe"
 import { ProjectSection } from "../components/projects"
 import { ContactSection } from "../components/contact"
 import { FooterSection } from "../components/footer"
+import { VideoGraphics } from "../components/videos"
+import { DesignGraphics } from "../components/designs"
 
 export const Home=()=>{
     return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -30,6 +32,8 @@ export const Home=()=>{
                 <HomeSection/>
                 <AboutMe/>
                 <ProjectSection/>
+                <VideoGraphics/>
+                <DesignGraphics/>
                 <ContactSection/>
                 <FooterSection/>
                 

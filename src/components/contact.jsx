@@ -26,7 +26,7 @@ export const ContactSection=()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                             <Mail className="h-6 w-6 text-primary"/>
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <h4 className="font-medium"> Email</h4>
                                 <a href="mailto:amodhgunawardana@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">amodhgunwardana@gmail.com</a>
                             </div>
@@ -37,7 +37,7 @@ export const ContactSection=()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                             <Phone className="h-6 w-6 text-primary"/>
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <h4 className="font-medium"> Phone</h4>
                                 <a href="tel:+94112891263" className="text-muted-foreground hover:text-primary transition-colors">077 222 3323</a>
                             </div>
@@ -48,7 +48,7 @@ export const ContactSection=()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                             <MapPin className="h-6 w-6 text-primary"/>
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <h4 className="font-medium"> Location</h4>
                                 <a  className="text-muted-foreground hover:text-primary transition-colors">Colombo, Sri Lanka</a>
                             </div>
