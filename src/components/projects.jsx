@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react"
 const projects=[
     {
         id:1,
-        title:"Protfilio",
+        title:"Portfolio",
         descroption:"My First Portfolio",
         image:"/projects/project1.png",
         tags:["React","TailwindCSS",],
