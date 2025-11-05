@@ -4,7 +4,7 @@ const projects=[
     {
         id:1,
         title:"Protfilio",
-        descroption:"My First Protfilio",
+        descroption:"My First Portfolio",
         image:"/projects/project1.png",
         tags:["React","TailwindCSS",],
         demoUrl:"#home",
