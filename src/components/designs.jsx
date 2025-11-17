@@ -13,7 +13,7 @@ const graphics=[
         id:2,
         title:"Graphic-2",
         descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
-        image:"/graphics/img2.jpg",
+        image:"/graphics/img-2.png",
         tags:["Photoshop"],
         demoUrl:"/graphics/img-2.jpg",
     },
