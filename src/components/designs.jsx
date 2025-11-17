@@ -37,9 +37,9 @@ const graphics=[
         id:5,
         title:"Graphic-5",
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
-        image:"/graphics/img-r.png",
+        image:"/graphics/img-5.png",
         tags:["Canva"],
-        demoUrl:"/graphics/img-r.png",
+        demoUrl:"/graphics/img-5.png",
     },
     {
         id:6,
