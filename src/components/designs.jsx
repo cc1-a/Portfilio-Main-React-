@@ -15,7 +15,7 @@ const graphics=[
         descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
         image:"/graphics/img-2.png",
         tags:["Photoshop"],
-        demoUrl:"/graphics/img-2.jpg",
+        demoUrl:"/graphics/img-2.png",
     },
     {
         id:3,
@@ -37,9 +37,9 @@ const graphics=[
         id:5,
         title:"Graphic-5",
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
-        image:"/graphics/img5.png",
+        image:"/graphics/img-r.png",
         tags:["Canva"],
-        demoUrl:"/graphics/img5.png",
+        demoUrl:"/graphics/img-r.png",
     },
     {
         id:6,
@@ -47,7 +47,7 @@ const graphics=[
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
         image:"/graphics/img-6.png",
         tags:["Canva"],
-        demoUrl:"/graphics/img6.png",
+        demoUrl:"/graphics/img-6.png",
     }
 ]
 
