@@ -13,8 +13,7 @@ const projects=[
         {
         id:2,
         title:"Attendance&Payment Checking",
-        descroption:"An app for the school hockey team to manage player rosters and schedules.
-            <br/>username: <b>username</b> psswd: <b>password</b> to view
+        descroption:"An app for the school hockey team to manage player rosters and schedules.<br/>username: <b>username</b> psswd: <b>password</b> to view
             ",
         image:"/projects/project2.png",
         tags:["Flask","Google Sheet API","TailwindCSS",],
