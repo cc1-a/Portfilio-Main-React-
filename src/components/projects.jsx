@@ -9,6 +9,17 @@ const projects=[
         tags:["React","TailwindCSS",],
         demoUrl:"#home",
         githubUrl:"https://github.com/cc1-a/Portfilio-Main-React-",
+    },
+        {
+        id:2,
+        title:"Attendance&Payment Checking",
+        descroption:"An app for the school hockey team to manage player rosters and schedules.
+            <br/>username: <b>username</b> psswd: <b>password</b> to view
+            ",
+        image:"/projects/project2.png",
+        tags:["Flask","Google Sheet API","TailwindCSS",],
+        demoUrl:"https://dshockey.vercel.app/",
+        githubUrl:"https://github.com/cc1-a/donz_hockey_app_attendace_checker",
     }
 ]
 
