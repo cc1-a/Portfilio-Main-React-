@@ -14,7 +14,7 @@ const projects=[
     {
         id:2,
         title:"Attendance & Payment Checking",
-        descroption:"An app for the school hockey team to manage player rosters and schedules.username: username psswd: password to view",
+        descroption:"An app for the school hockey team to manage player rosters and schedules.Username: username Password: password to view",
         image:"https://placehold.co/600x400/22c55e/ffffff?text=Hockey+App",
         tags:["Flask","Google Sheet API","TailwindCSS",],
         demoUrl:"https://dshockey.vercel.app/",
