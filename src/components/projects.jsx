@@ -27,7 +27,7 @@ export default function App() {
         <div className="min-h-screen bg-gray-900 font-[Inter,sans-serif] antialiased">
             <section id="projects" className="py-24 px-4 relative min-h-screen text-white">
                 <div className="absolute inset-0 z-0 overflow-hidden">
-                    <div className="h-full w-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGZpbGw9IiNmZmYiPgogICAgICAgICAgICA8cGF0aCBkPSJNNCA2YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLTMiIG9wYWNpdHk9Ii4xIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNzMgMTc1YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLiIG9wYWNpdHk9Ii4wOCIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEgMTg1YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLTMiIG9wYWNpdHk9Ii4wNSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNODIgNDRjLjg3IDAgMS41Ljc2IDEuNSAxLjcgMCAuOTQtLjYzIDEuNy0xLjUgMS43LS44NyAwLTEuNS0uNzYtMS41LTEuNyAwLS45NC42My0xLjcgMS41LTEuNyIgb3BhY2l0eT0iLjIiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=')] bg-repeat bg-center"></div>
+                    <div className="h-full w-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGZpbGw9IiNmZmYiPgogICAgICAgICAgICA8cGF0aCBkPSJNNCA2YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLTMiIG9wYWNpdHk9Ii4xIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNzMgMTc1YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLTMiIG9wYWNpdHk9Ii4wOCIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEgMTg1YzEuNjU3IDAgMyAxLjM0MyAzIDMgMCAxLjY1Ny0xLjM0MyAzLTMgMy0xLjY1NyAwLTMtMS4zNDMtMy0zIDAtMS42NTcgMS4zNDMtMyAzLTMiIG9wYWNpdHk9Ii4wNSIvPgogICAgICAgICAgICA8cGF0aCBkPSJNODIgNDRjLjg3IDAgMS41Ljc2IDEuNSAxLjcgMCAuOTQtLjYzIDEuNy0xLjUgMS43LS44NyAwLTEuNS0uNzYtMS41LTEuNyAwLS45NC42My0xLjcgMS41LTEuNyIgb3BhY2l0eT0iLjIiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=')] bg-repeat bg-center"></div>
                 </div>
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-10"></div>
                 
@@ -115,3 +115,4 @@ export default function App() {
             </section>
         </div>
     );
+}
