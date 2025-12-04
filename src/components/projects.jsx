@@ -10,7 +10,7 @@ const projects = [
         tags: ["React", "TailwindCSS"],
         demoUrl: "#home",
         githubUrl: "https://github.com/cc1-a/Portfilio-Main-React-",
-    }
+    },
         {
         id: 2,
         title: "Google Sheet Automation",
