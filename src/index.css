@@ -40,11 +40,11 @@
   @keyframes fade-in{
     from {
       opacity: 0;
-      transform: translateY(20px); /* Semicolon added here */
+      transform: translateY(20px);
     }
     to{
       opacity: 1;
-      transform: translateY(0)
+      transform: translateY(0);
     }
   }
   @keyframes meteor{
@@ -141,9 +141,7 @@
   border:1px solid transparent;
 }
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-  transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-  hover:scale-105 active:scale-95;
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)] hover:scale-105 active:scale-95;
 }
 @utility star {
   @apply absolute rounded-full bg-white;
