@@ -1,124 +1,176 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react"
-import { cn } from "../lib/utils"
+import React, { useState } from 'react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 
-export const ContactSection=()=>{
-    const handleSubmit=(e)=>{
-        e.preventDefault()
+export const ContactSection = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState("");
 
-        setTimeout(()=>{
+    // YOUR TWILIO KEYS (Hardcoded as requested)
+    const accountSid = 'ACa687751b23438c65b56306e9e677e520';
+    const authToken = '94d6c479e22209717e6c511e78520f54';
+    const myNumber = 'whatsapp:+94766226039'; 
+    const twilioNumber = 'whatsapp:+14155238886'; 
 
-        },1500)
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus("");
 
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
 
+        const textBody = `📦 *NEW PORTFOLIO MESSAGE* 📦\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n\n📝 *Message:*\n${message}`;
 
-    return <section id="contact" className="py-24 px-4 relative bg-secondary/30">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Get In <span className="text-primary">Touch</span></h2>
+        try {
+            // Encode credentials for Basic Auth
+            const credentials = btoa(`${accountSid}:${authToken}`);
 
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Have a project idea in mind or interested in a collaboration? I'm always open to discussing new opportunities. Feel free to connect with me to start the conversation!</p>
+            // Prepare form data for Twilio API (must be URLSearchParams)
+            const params = new URLSearchParams();
+            params.append('To', myNumber);
+            params.append('From', twilioNumber);
+            params.append('Body', textBody);
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-8">
-                    <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-                    <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                            <Mail className="h-6 w-6 text-primary"/>
+            const response = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Basic ${credentials}`,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: params
+            });
+
+            if (response.ok) {
+                setStatus("✅ WhatsApp Sent Successfully!");
+                e.target.reset();
+            } else {
+                const errorData = await response.json();
+                console.error("Twilio Error:", errorData);
+                setStatus(`❌ Error: ${errorData.message}`);
+            }
+
+        } catch (error) {
+            console.error("Fetch Error:", error);
+            setStatus("❌ Failed to send. Check console.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <section id="contact" className="py-24 px-4 relative bg-secondary/30">
+            <div className="container mx-auto max-w-5xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Get In <span className="text-primary">Touch</span></h2>
+
+                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                    Have a project idea in mind or interested in a collaboration? I'm always open to discussing new opportunities. Feel free to connect with me to start the conversation!
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="space-y-8">
+                        <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <div className="space-y-6 justify-center">
+                            <div className="flex items-start space-x-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <Mail className="h-6 w-6 text-primary" />
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-medium"> Email</h4>
+                                    <a href="mailto:amodhgunawardana@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">amodhgunawardana@gmail.com</a>
+                                </div>
                             </div>
-                            <div className="text-left">
-                                <h4 className="font-medium"> Email</h4>
-                                <a href="mailto:amodhgunawardana@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">amodhgunwardana@gmail.com</a>
+                        </div>
+                        <div className="space-y-6 justify-center">
+                            <div className="flex items-start space-x-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <Phone className="h-6 w-6 text-primary" />
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-medium"> Phone</h4>
+                                    <a href="tel:+94772223323" className="text-muted-foreground hover:text-primary transition-colors">077 222 3323</a>
+                                </div>
                             </div>
+                        </div>
+                        <div className="space-y-6 justify-center">
+                            <div className="flex items-start space-x-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <MapPin className="h-6 w-6 text-primary" />
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-medium"> Location</h4>
+                                    <a className="text-muted-foreground hover:text-primary transition-colors">Colombo, Sri Lanka</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="pt-8">
+                            <h4 className="font-medium mb-4">Connect With Me</h4>
+                            <div className="flex space-x-4 justify-center">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/amodh-gunawardana-54734333a/">
+                                    <Linkedin />
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/amodh.official/">
+                                    <Instagram />
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://web.facebook.com/profile.php?id=61553986731546">
+                                    <Facebook />
+                                </a>
+                            </div>
+
                         </div>
                     </div>
-                     <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                            <Phone className="h-6 w-6 text-primary"/>
+                    <div className="bg-card p-8 rounded-lg shadow-xs">
+                        <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
+                                <input type="text"
+                                    id="name"
+                                    name="name"
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="Amodh Gunawardana..."
+                                    required
+                                />
                             </div>
-                            <div className="text-left">
-                                <h4 className="font-medium"> Phone</h4>
-                                <a href="tel:+94112891263" className="text-muted-foreground hover:text-primary transition-colors">077 222 3323</a>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
+                                <input type="email"
+                                    id="email"
+                                    name="email"
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="example@gmail.com"
+                                    required
+                                />
                             </div>
-                        </div>
-                    </div>
-                     <div className="space-y-6 justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                            <MapPin className="h-6 w-6 text-primary"/>
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                                    placeholder="Hello, I'd like to talk about"
+                                    required
+                                />
                             </div>
-                            <div className="text-left">
-                                <h4 className="font-medium"> Location</h4>
-                                <a  className="text-muted-foreground hover:text-primary transition-colors">Colombo, Sri Lanka</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="pt-8">
-                        <h4 className="font-medium mb-4">Connect With Me</h4>
-                        <div className="flex space-x-4 justify-center">
-                            <a target="_blank" href="https://www.linkedin.com/in/amodh-gunawardana-54734333a/">
-                                <Linkedin/>
-                            </a>
-                            <a target="_blank" href="https://www.instagram.com/amodh.official/">
-                                <Instagram/>
-                            </a>
-                            <a target="_blank" href="https://web.facebook.com/profile.php?id=61553986731546">
-                                <Facebook/>
-                            </a>
-                        </div>
+                            <button 
+                                type="submit" 
+                                disabled={isSubmitting}
+                                className="cosmic-button w-full flex items-center justify-between px-6 disabled:opacity-50"
+                            >
+                                <span className="flex-grow text-center">
+                                    {isSubmitting ? "Sending WhatsApp..." : "Send Message"}
+                                </span>
+                                <Send size={16} />
+                            </button>
+                            {status && <p className="text-center text-sm mt-4 font-bold text-primary">{status}</p>}
+                        </form>
 
                     </div>
                 </div>
-                <div className="bg-card p-8 rounded-lg shadow-xs">
-                    <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-                    <form className="space-y-6">
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                            <input type="text"
-                              id="name"
-                              name="name"
-                              className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                              placeholder="Amodh Gunawardana..."
-                              required
 
-                            
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
-                            <input type="email"
-                              id="email"
-                              name="email"
-                              className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                              placeholder="example@gmail.com"
-                              required
 
-                            
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
-                            <textarea
-                              id="message"
-                              name="message"
-                              className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                              placeholder="Hello, I'd like to talk about"
-                              required
-
-                            
-                            />
-                        </div>
-                       <button type="submit" className="cosmic-button w-full flex items-center justify-between px-6">
-                        <span className="flex-grow text-center">Send Message</span>
-                         <Send size={16}/>
-                        </button>
-                    </form>
-
-                </div>
             </div>
-
-
-        </div>
-    </section>
+        </section>
+    );
 }
