@@ -1,28 +1,28 @@
 import React from 'react';
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
-const projects=[
+const projects = [
     {
-        id:1,
-        title:"Portfolio",
-        descroption:"My First Portfolio, built with modern front-end technologies to showcase my skills and expertise.",
-        image:"https://placehold.co/600x400/1e293b/ffffff?text=Portfolio+Site",
-        tags:["React","TailwindCSS"],
-        demoUrl:"#home",
-        githubUrl:"https://github.com/cc1-a/Portfilio-Main-React-",
+        id: 1,
+        title: "Portfolio",
+        description: "My First Portfolio, built with modern front-end technologies to showcase my skills and expertise.",
+        image: "https://placehold.co/600x400/1e293b/ffffff?text=Portfolio+Site",
+        tags: ["React", "TailwindCSS"],
+        demoUrl: "#home",
+        githubUrl: "https://github.com/cc1-a/Portfilio-Main-React-",
     },
     {
-        id:2,
-        title:"Attendance & Payment Checking",
-        descroption:"An app for the school hockey team to manage player rosters and schedules. Access requires: Username: <code>username</code>, Password: <code>password</code>.",
-        image:"https://placehold.co/600x400/22c55e/ffffff?text=Hockey+App",
-        tags:["Flask","Google Sheet API","TailwindCSS"],
-        demoUrl:"https://dshockey.vercel.app/",
-        githubUrl:"https://github.com/cc1-a/donz_hockey_app_attendace_checker",
+        id: 2,
+        title: "Attendance & Payment Checking",
+        description: "An app for the school hockey team to manage player rosters and schedules. Access requires: Username: <code>username</code>, Password: <code>password</code>.",
+        image: "https://placehold.co/600x400/22c55e/ffffff?text=Hockey+App",
+        tags: ["Flask", "Google Sheet API", "TailwindCSS"],
+        demoUrl: "https://dshockey.vercel.app/",
+        githubUrl: "https://github.com/cc1-a/donz_hockey_app_attendace_checker",
     }
 ];
 
-export default function App() {
+export const ProjectSection = () => {
     return (
         <div className="min-h-screen bg-gray-900 font-[Inter,sans-serif] antialiased">
             <section id="projects" className="py-24 px-4 relative min-h-screen text-white">
@@ -73,7 +73,7 @@ export default function App() {
                                     
                                     <p 
                                         className="text-gray-400 text-sm mb-6 leading-relaxed"
-                                        dangerouslySetInnerHTML={{ __html: project.descroption }}
+                                        dangerouslySetInnerHTML={{ __html: project.description }}
                                     />
                                     
                                     <div className="flex space-x-6">
@@ -115,4 +115,4 @@ export default function App() {
             </section>
         </div>
     );
-}
+};
