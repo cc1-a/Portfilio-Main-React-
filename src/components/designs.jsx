@@ -63,20 +63,6 @@ const graphics=[
         tags:["Photoshop"],
         demoUrl:"/graphics/img8.png",
     },    {
-        id:7,
-        title:"Graphic-9",
-        descroption:"Video Concept and Editing by Amodh Gunawardana.",
-        image:"/graphics/img9.png",
-        tags:["Photoshop"],
-        demoUrl:"/graphics/img9.png",
-    },    {
-        id:8,
-        title:"Graphic-8",
-        descroption:"Video Concept and Editing by Amodh Gunawardana.",
-        image:"/graphics/img8.png",
-        tags:["Photoshop"],
-        demoUrl:"/graphics/img8.png",
-    },    {
         id:9,
         title:"Graphic-9",
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
@@ -88,16 +74,16 @@ const graphics=[
         title:"Graphic-10",
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
         image:"/graphics/img10.png",
-        tags:["Canva"],
+        tags:["Photoshop"],
         demoUrl:"/graphics/img10.png",
     },    {
         id:11,
         title:"Graphic-11",
         descroption:"Video Concept and Editing by Amodh Gunawardana.",
         image:"/graphics/img11.png",
-        tags:["Canva"],
+        tags:["Photoshop"],
         demoUrl:"/graphics/img11.png",
-    }
+
 ]
 
 export const DesignGraphics=()=>{
