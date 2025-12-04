@@ -4,7 +4,7 @@ const videos=[
     {
         id:1,
         title:"Fashion Video-1",
-        descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
+        description:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
         image:"/videos/video_1.png",
         tags:["Premier Pro"],
         demoUrl:"https://www.instagram.com/reel/DIyNlu9KQlH/",
@@ -12,7 +12,7 @@ const videos=[
     {
         id:2,
         title:"Fashion Video-2",
-        descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
+        description:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
         image:"/videos/video_2.png",
         tags:["DaVinci Resolve"],
         demoUrl:"https://www.instagram.com/reel/DJZfM6DyDcu/",
@@ -20,7 +20,7 @@ const videos=[
     {
         id:3,
         title:"Fashion Video-3",
-        descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
+        description:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
         image:"/videos/video_3.png",
         tags:["Cap Cut"],
         demoUrl:"https://www.instagram.com/reel/DJalyCTyhqZ/",
@@ -28,7 +28,7 @@ const videos=[
     {
         id:4,
         title:"Fashion Video-4",
-        descroption:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
+        description:"Video Direction and Concept by Yehansa Suriyaarachchi, a Fashion and Marketing student at AOD. Edited by Amodh Gunawardana.",
         image:"/videos/video_4.png",
         tags:["Cap Cut"],
         demoUrl:"https://www.instagram.com/reel/DQCZBGhkh3e/",
@@ -36,14 +36,15 @@ const videos=[
     {
         id:5,
         title:"Interact outgoing video",
-        descroption:"Video Concept and Editing by Amodh Gunawardana.",
+        description:"Video Concept and Editing by Amodh Gunawardana.",
         image:"/videos/video_5.png",
         tags:["Premier Pro"],
         demoUrl:"https://www.instagram.com/reel/C9rZ5otoovO/",
-    },    {
+    },
+    {
         id:6,
         title:"Haloween Video",
-        descroption:"Video Concept and Editing by Amodh Gunawardana.",
+        description:"Video Concept and Editing by Amodh Gunawardana.",
         image:"/videos/video_6.png",
         tags:["Premier Pro"],
         demoUrl:"https://www.instagram.com/p/CxKU1SFtRNZ/",
@@ -60,7 +61,7 @@ export const VideoGraphics=()=>{
                 {videos.map((project,key)=>(
                     <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
                         <div className="h-48 overflow-hidden">
-                            <img src={project.image} alt={project.title}  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         </div>
 
                         <div className="p-6">
@@ -72,7 +73,7 @@ export const VideoGraphics=()=>{
 
                         
                         <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                        <p className="text-muted-foreground text-sm mb-4">{project.descroption}</p>
+                        <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                         <div className="flex justify-between items-center">
                             <div className="flex space-x-3">
                                 <a href={project.demoUrl} className="text-foreground/80 hover:text-primary transition-color duration 300" target="_blank"><ExternalLink size={20}/></a>
