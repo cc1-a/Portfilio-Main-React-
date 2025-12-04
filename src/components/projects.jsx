@@ -11,14 +11,14 @@ const projects = [
         demoUrl: "#home",
         githubUrl: "https://github.com/cc1-a/Portfilio-Main-React-",
     },
-        {
+    {
         id: 2,
         title: "Google Sheet Automation",
-        description: "Using an API(Gspread) it updates the googlesheet of a school hockey team.
+        // FIXED: Used backticks (`) for multi-line text
+        description: `Using an API(Gspread) it updates the googlesheet of a school hockey team.
 
             Username: username
-            Password: password
-            ",
+            Password: password`,
         image: "/projects/project2.png",
         tags: ["Flask", "Google Api"],
         demoUrl: "https://dshockey.vercel.app/",
@@ -58,7 +58,8 @@ export const ProjectSection = () => {
                                 </div>
 
                                 <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                                {/* FIXED: preserve whitespace for the description formatting */}
+                                <p className="text-muted-foreground text-sm mb-4 whitespace-pre-line">{project.description}</p>
                                 
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3">
