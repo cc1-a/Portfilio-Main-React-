@@ -40,6 +40,13 @@ const videos=[
         image:"/videos/video_5.png",
         tags:["Premier Pro"],
         demoUrl:"https://www.instagram.com/reel/C9rZ5otoovO/",
+    },    {
+        id:6,
+        title:"Haloween Video",
+        descroption:"Video Concept and Editing by Amodh Gunawardana.",
+        image:"/videos/video_6.png",
+        tags:["Premier Pro"],
+        demoUrl:"https://www.instagram.com/p/CxKU1SFtRNZ/",
     }
 ]
 
