@@ -5,55 +5,38 @@ export const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState("");
 
-    // YOUR TWILIO KEYS (Hardcoded as requested)
-    const accountSid = 'ACa687751b23438c65b56306e9e677e520';
-    const authToken = '94d6c479e22209717e6c511e78520f54';
-    const myNumber = 'whatsapp:+94766226039'; 
-    const twilioNumber = 'whatsapp:+14155238886'; 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         setStatus("");
 
         const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-
-        const textBody = `📦 *NEW PORTFOLIO MESSAGE* 📦\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n\n📝 *Message:*\n${message}`;
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        };
 
         try {
-            // Encode credentials for Basic Auth
-            const credentials = btoa(`${accountSid}:${authToken}`);
-
-            // Prepare form data for Twilio API (must be URLSearchParams)
-            const params = new URLSearchParams();
-            params.append('To', myNumber);
-            params.append('From', twilioNumber);
-            params.append('Body', textBody);
-
-            const response = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
+            // Send data to our new Vercel API file
+            const response = await fetch('/api/whatsapp', {
                 method: 'POST',
-                headers: {
-                    'Authorization': `Basic ${credentials}`,
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: params
+                body: JSON.stringify(data)
             });
 
+            const result = await response.json();
+
             if (response.ok) {
-                setStatus("✅ WhatsApp Sent Successfully!");
+                setStatus("✅ Message sent to WhatsApp!");
                 e.target.reset();
             } else {
-                const errorData = await response.json();
-                console.error("Twilio Error:", errorData);
-                setStatus(`❌ Error: ${errorData.message}`);
+                console.error("API Error:", result);
+                setStatus(`❌ Error: ${result.error}`);
             }
 
         } catch (error) {
             console.error("Fetch Error:", error);
-            setStatus("❌ Failed to send. Check console.");
+            setStatus("❌ Failed to send. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -71,6 +54,7 @@ export const ContactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-8">
                         <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
                         <div className="space-y-6 justify-center">
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 rounded-full bg-primary/10">
@@ -82,6 +66,7 @@ export const ContactSection = () => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="space-y-6 justify-center">
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 rounded-full bg-primary/10">
@@ -93,6 +78,7 @@ export const ContactSection = () => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="space-y-6 justify-center">
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 rounded-full bg-primary/10">
@@ -100,10 +86,11 @@ export const ContactSection = () => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-medium"> Location</h4>
-                                    <a className="text-muted-foreground hover:text-primary transition-colors">Colombo, Sri Lanka</a>
+                                    <span className="text-muted-foreground">Colombo, Sri Lanka</span>
                                 </div>
                             </div>
                         </div>
+
                         <div className="pt-8">
                             <h4 className="font-medium mb-4">Connect With Me</h4>
                             <div className="flex space-x-4 justify-center">
@@ -117,9 +104,9 @@ export const ContactSection = () => {
                                     <Facebook />
                                 </a>
                             </div>
-
                         </div>
                     </div>
+
                     <div className="bg-card p-8 rounded-lg shadow-xs">
                         <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -129,7 +116,7 @@ export const ContactSection = () => {
                                     id="name"
                                     name="name"
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="Amodh Gunawardana..."
+                                    placeholder="Your Name..."
                                     required
                                 />
                             </div>
@@ -156,20 +143,17 @@ export const ContactSection = () => {
                             <button 
                                 type="submit" 
                                 disabled={isSubmitting}
-                                className="cosmic-button w-full flex items-center justify-between px-6 disabled:opacity-50"
+                                className="cosmic-button w-full flex items-center justify-between px-6 disabled:opacity-50 cursor-pointer"
                             >
                                 <span className="flex-grow text-center">
-                                    {isSubmitting ? "Sending WhatsApp..." : "Send Message"}
+                                    {isSubmitting ? "Sending..." : "Send Message"}
                                 </span>
                                 <Send size={16} />
                             </button>
                             {status && <p className="text-center text-sm mt-4 font-bold text-primary">{status}</p>}
                         </form>
-
                     </div>
                 </div>
-
-
             </div>
         </section>
     );
