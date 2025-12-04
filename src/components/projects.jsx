@@ -14,7 +14,11 @@ const projects = [
         {
         id: 2,
         title: "Google Sheet Automation",
-        description: "Using an API(Gspread) it updates the googlesheet of a school hockey team.",
+        description: "Using an API(Gspread) it updates the googlesheet of a school hockey team.
+
+            Username: username
+            Password: password
+            ",
         image: "/projects/project2.png",
         tags: ["Flask", "Google Api"],
         demoUrl: "https://dshockey.vercel.app/",
