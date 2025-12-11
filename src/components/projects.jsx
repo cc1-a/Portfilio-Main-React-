@@ -26,7 +26,7 @@ const projects = [
     }, {
         id: 3,
         title: "Paper Genius | AI-Driven E-Commerce Platform",
-        description: "A sci-fi themed e-commerce site featuring a generative AI shopping assistant, automated WhatsApp order integration, and a comprehensive admin dashboard.",
+        description: `A sci-fi themed e-commerce site featuring a generative AI shopping assistant, automated WhatsApp order integration, and a comprehensive admin dashboard.`,
         image: "/projects/project3.png",
         tags: ["Flask", "PostgreSQL","Google Gemini AI","WhatsApp API","Tailwind CSS","Cloudinary"],
         demoUrl: "https://papergenius.vercel.app/",
