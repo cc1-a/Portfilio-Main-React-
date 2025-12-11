@@ -23,6 +23,14 @@ const projects = [
         tags: ["Flask", "Google Api"],
         demoUrl: "https://dshockey.vercel.app/",
         githubUrl: "https://dshockey.vercel.app/",
+    }, {
+        id: 3,
+        title: "Paper Genius | AI-Driven E-Commerce Platform",
+        description: "A sci-fi themed e-commerce site featuring a generative AI shopping assistant, automated WhatsApp order integration, and a comprehensive admin dashboard.",
+        image: "/projects/project3.png",
+        tags: ["Flask", "PostgreSQL","Google Gemini AI","WhatsApp API","Tailwind CSS","Cloudinary"],
+        demoUrl: "https://papergenius.vercel.app/",
+        githubUrl: "https://github.com/cc1-a/paper-genius",
     }
 ];
 
