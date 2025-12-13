@@ -31,6 +31,14 @@ const projects = [
         tags: ["Flask", "PostgreSQL","Google Gemini AI","WhatsApp API","Tailwind CSS","Cloudinary"],
         demoUrl: "https://papergenius.vercel.app/",
         githubUrl: "https://github.com/cc1-a/paper-genius",
+    },{
+        id: 4,
+        title: "YMS Music | Modern Instrument Store",
+        description: "A high-performance e-commerce platform featuring a custom Admin Dashboard with Cloudinary integration, automated WhatsApp order coordination, secure Firebase authentication, and a premium UI with staggered animations.",
+        image: "/projects/yms-music.png", 
+        tags: ["React", "Firebase", "Tailwind CSS", "Framer Motion", "Cloudinary", "WhatsApp API"],
+        demoUrl: "https://yms-music.vercel.app/",
+        githubUrl: "https://github.com/cc1-a/YMS-Music",
     }
 ];
 
