@@ -35,7 +35,7 @@ const projects = [
         id: 4,
         title: "YMS Music | Modern Instrument Store",
         description: "A high-performance e-commerce platform featuring a custom Admin Dashboard with Cloudinary integration, automated WhatsApp order coordination, secure Firebase authentication, and a premium UI with staggered animations.",
-        image: "/projects/yms-music.png", 
+        image: "/projects/project4.png", 
         tags: ["React", "Firebase", "Tailwind CSS", "Framer Motion", "Cloudinary", "WhatsApp API"],
         demoUrl: "https://yms-music.vercel.app/",
         githubUrl: "https://github.com/cc1-a/YMS-Music",
