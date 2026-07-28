@@ -118,17 +118,24 @@ export const ProjectSection = () => {
     useGSAP(() => {
         if (!scrollRef.current || !containerRef.current) return;
         
-        const sections = gsap.utils.toArray(".project-card-wrapper");
+        const getScrollAmount = () => {
+            return -(scrollRef.current.scrollWidth - window.innerWidth);
+        };
         
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: containerRef.current,
-                pin: true,
-                scrub: 1,
-                end: () => "+=" + scrollRef.current.offsetWidth,
-            }
+        const tween = gsap.to(scrollRef.current, {
+            x: getScrollAmount,
+            ease: "none"
+        });
+
+        ScrollTrigger.create({
+            trigger: containerRef.current,
+            start: "top top",
+            end: () => `+=${scrollRef.current.scrollWidth - window.innerWidth}`,
+            pin: true,
+            animation: tween,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            pinSpacing: true
         });
     }, { scope: containerRef });
 
